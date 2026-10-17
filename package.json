@@ -1,0 +1,17 @@
+{
+  "name": "so-dashboard",
+  "version": "1.0.0",
+  "description": "Dashboard de monitoramento de sistema operacional com Node.js e Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --check server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
