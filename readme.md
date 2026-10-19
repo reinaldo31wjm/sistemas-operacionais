@@ -1,3 +1,7 @@
+toma cuidado mano
+
+
+
 # 🖥️ Introdução aos Sistemas Operacionais
 
 > Material de apoio para disciplinas introdutórias de Computação, Engenharia de Software, Sistemas de Informação e cursos técnicos.
