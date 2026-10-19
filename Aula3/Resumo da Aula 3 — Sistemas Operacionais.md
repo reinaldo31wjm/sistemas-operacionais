@@ -1,73 +1,540 @@
-# Resumo da Aula 3 — Sistemas Operacionais
+/* ========================================================================== 
+   Kernel Workstation v3.5 - Modern Enterprise Stylesheet
+   ========================================================================== */
 
-**Tema:** Conceitos, funções e tipos de sistemas operacionais, Git, VS Code e publicação de código no GitHub.
+:root {
+  --bg: #030712;
+  --panel: #0b0f19;
+  --card: #111827;
+  --card-hover: #1f2937;
+  --border: #1f2937;
+  --border-focus: #374151;
 
-## 1. Conteúdo principal da aula
+  --primary: #3b82f6;
+  --primary-glow: rgba(59, 130, 246, 0.25);
+  --primary-hover: #2563eb;
 
-A aula apresenta diferentes tipos de sistemas operacionais e relaciona cada tipo às necessidades do ambiente em que ele é utilizado. O sistema operacional administra os recursos do computador, oferece serviços aos programas e organiza a execução das tarefas.
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --purple: #8b5cf6;
 
-### Tipos de sistemas operacionais
+  --text: #f9fafb;
+  --text-muted: #9ca3af;
+  --text-dim: #4b5563;
 
-- **Sistemas de grande porte (mainframes):** são projetados para alta capacidade de entrada e saída, processamento de grandes volumes de transações, alta disponibilidade e muitos usuários simultâneos. São comuns em bancos, grandes varejistas e plataformas de comércio eletrônico.
-- **Sistemas operacionais de servidor:** atendem vários usuários e serviços pela rede, como páginas web, arquivos, bancos de dados e autenticação. Estabilidade, segurança, escalabilidade e compartilhamento de recursos são prioridades.
-- **Sistemas de multiprocessadores:** utilizam várias CPUs ou vários núcleos para executar tarefas em paralelo. Precisam de escalonamento, sincronização, controle de concorrência e mecanismos para manter a coerência de cache.
-- **Sistemas de computadores pessoais:** são voltados principalmente para um usuário, com interface gráfica, multiprogramação e compatibilidade com aplicativos. Windows, macOS e Linux são exemplos.
-- **Sistemas portáteis:** usados em celulares e tablets, priorizam economia de energia, sensores, segurança por permissões e distribuição de aplicativos. Android e iOS são exemplos.
-- **Sistemas embarcados:** executam funções específicas em dispositivos com recursos limitados, como micro-ondas, Smart TVs e sistemas automotivos. Podem exigir resposta rápida e alta confiabilidade.
-- **Sistemas de nós sensores:** operam em dispositivos pequenos, normalmente alimentados por bateria, com comunicação sem fio e protocolos leves. Monitoramento ambiental e agricultura de precisão são exemplos de uso.
-- **Sistemas de tempo real:** precisam responder dentro de prazos definidos. No modelo **hard real-time**, perder o prazo pode causar uma falha grave; no **soft real-time**, a perda do prazo causa degradação, mas não necessariamente uma falha crítica.
-- **Sistemas de cartões inteligentes:** trabalham com memória e processamento limitados, mas exigem segurança, criptografia, autenticação e isolamento entre aplicações.
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
 
-## 2. Git e controle de versão
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-O **Git** é um sistema de controle de versão que registra as alterações feitas em arquivos. Ele permite acompanhar o histórico, recuperar versões anteriores, trabalhar em equipe e sincronizar um projeto local com um repositório remoto, como o GitHub.
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  padding: 1.5rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
 
-Os conceitos essenciais são:
+.container {
+  max-width: 1350px;
+  margin: 0 auto;
+}
 
-- **Repositório:** pasta controlada pelo Git, contendo os arquivos e o histórico do projeto.
-- **Commit:** registro de um conjunto de alterações, acompanhado de uma mensagem explicativa.
-- **Push:** envio dos commits locais para o repositório remoto.
-- **Pull:** busca e integração de alterações existentes no repositório remoto.
-- **Clone:** criação de uma cópia local de um repositório remoto.
-- **Branch:** linha independente de desenvolvimento, útil para testar funcionalidades sem comprometer a branch principal.
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
 
-A aula recomenda commits pequenos e frequentes, mensagens claras, uso de branches para novas funcionalidades e testes antes de integrar alterações.
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
 
-## 3. O que existe na pasta `Aula3` do repositório
+.brand-icon {
+  width: 14px;
+  height: 14px;
+  background: var(--primary);
+  border-radius: 3px;
+  box-shadow: 0 0 12px var(--primary-glow);
+}
 
-A pasta analisada contém o PDF da aula e uma aplicação web formada por `index.html`, `script.js` e `style.css` [1]. O projeto é uma interface chamada **Kernel Workstation**, que simula alguns mecanismos estudados em Sistemas Operacionais.
+.brand-text h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
 
-No `index.html`, a página apresenta:
+.version-tag {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
 
-- seleção do algoritmo de escalonamento da CPU: **FCFS**, **Round Robin** com quantum de 2 segundos e **SJF**;
-- seleção da velocidade de simulação;
-- botão para criar novos processos;
-- indicadores de uso da CPU, ocupação da RAM, quantidade de processos e trocas de contexto;
-- tabela de processos, semelhante a uma representação de PCB;
-- mapa de 16 blocos de memória, representando paginação;
-- terminal de eventos do sistema;
-- matriz comparativa entre Linux, Windows NT e macOS [2].
+.header-status {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
 
-No `script.js`, cada processo recebe um PID, nome, duração e quantidade aleatória de blocos de RAM. A função de alocação reserva blocos livres; quando o processo termina ou é encerrado, a memória é liberada. O simulador atualiza o status do processo entre **PRONTO**, **EXECUTANDO**, **CONCLUÍDO** e **ABORTADO** [3].
+.clock {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  background: var(--panel);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
 
-O escalonador funciona assim:
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
 
-- **FCFS:** executa os processos na ordem de chegada.
-- **SJF:** escolhe o processo pronto com menor tempo restante.
-- **Round Robin:** executa cada processo por até dois segundos e, se ele não terminar, devolve o processo ao final da fila.
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  background-color: var(--success);
+  border-radius: 50%;
+  animation: pulse 1.8s infinite;
+}
 
-O `style.css` cria a aparência visual do simulador: tema escuro, cartões de métricas, barras de progresso, tabela de processos, grade de memória, terminal e cartões comparativos dos sistemas operacionais [4].
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(0.85); }
+}
 
-Assim, o código da pasta não é apenas um arquivo simples enviado ao GitHub. Ele funciona como uma atividade prática de programação web que representa conceitos da aula, especialmente processos, escalonamento, memória, paginação e trocas de contexto.
+.controls-bar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
 
-## Referências
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
 
-[1]: https://github.com/reinaldo31wjm/sistemas-operacionais-1/tree/main/Aula3 "Pasta Aula3 no repositório sistemas-operacionais-1"
+label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
 
-[2]: https://raw.githubusercontent.com/reinaldo31wjm/sistemas-operacionais-1/main/Aula3/index.html "Arquivo index.html da Aula 3"
+select {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: all 0.2s;
+}
 
-[3]: https://raw.githubusercontent.com/reinaldo31wjm/sistemas-operacionais-1/main/Aula3/script.js "Arquivo script.js da Aula 3"
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-glow);
+}
 
-[4]: https://raw.githubusercontent.com/reinaldo31wjm/sistemas-operacionais-1/main/Aula3/style.css "Arquivo style.css da Aula 3"
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
 
-[5]: https://code.visualstudio.com/docs/sourcecontrol/overview "Source Control no Visual Studio Code"
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  box-shadow: 0 0 12px var(--primary-glow);
+}
+
+.btn-secondary {
+  background: var(--card);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.btn-secondary:hover {
+  background: var(--card-hover);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.metric-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.metric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.metric-title {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.metric-icon {
+  font-size: 1rem;
+}
+
+.metric-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  margin-bottom: 0.5rem;
+}
+
+.sub-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.panel-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.panel-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+th {
+  color: var(--text-muted);
+  padding: 0.65rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+td {
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.proc-bar-wrap {
+  width: 70px;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+}
+
+.proc-bar-fill {
+  height: 100%;
+  background: var(--primary);
+  width: 0%;
+  transition: width 0.15s linear;
+}
+
+.badge {
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  display: inline-block;
+}
+
+.badge-ready { background: rgba(245, 158, 11, 0.15); color: var(--warning); }
+.badge-running { background: rgba(59, 130, 246, 0.15); color: var(--primary); }
+.badge-done { background: rgba(16, 185, 129, 0.15); color: var(--success); }
+.badge-killed { background: rgba(239, 68, 68, 0.15); color: var(--danger); }
+
+.btn-kill {
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  transition: all 0.2s;
+}
+
+.btn-kill:hover {
+  background: var(--danger);
+  color: white;
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .memory-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.mem-block {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  height: 42px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  transition: all 0.3s ease;
+}
+
+.mem-block.allocated {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: var(--primary);
+  color: var(--primary);
+  box-shadow: 0 0 8px var(--primary-glow);
+}
+
+.terminal-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.terminal-dot {
+  width: 8px;
+  height: 8px;
+  background: #4ade80;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #4ade80;
+}
+
+.terminal {
+  background: #000;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  min-height: 380px;
+  max-height: 520px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  overflow-y: auto;
+  color: #4ade80;
+  box-shadow: inset 0 0 12px rgba(0,0,0,0.9);
+  flex-grow: 1;
+}
+
+.term-line {
+  margin-bottom: 0.4rem;
+  word-break: break-all;
+  line-height: 1.4;
+}
+
+.term-time {
+  color: var(--text-dim);
+  margin-right: 0.5rem;
+}
+
+.arch-matrix {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.arch-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  transition: border-color 0.2s ease;
+}
+
+.arch-card:hover {
+  border-color: var(--border-focus);
+}
+
+.arch-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.85rem;
+}
+
+.arch-icon {
+  font-size: 1.25rem;
+}
+
+.arch-card h3 {
+  font-size: 1.05rem;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.arch-card ul {
+  list-style: none;
+  font-size: 0.825rem;
+  color: var(--text-muted);
+}
+
+.arch-card li {
+  margin-bottom: 0.45rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.arch-card li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 1rem;
+  }
+
+  .controls-bar {
+    align-items: stretch;
+  }
+
+  .control-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  select,
+  .btn {
+    width: 100%;
+  }
+}
+

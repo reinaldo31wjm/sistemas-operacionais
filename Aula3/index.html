@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kernel OS Workstation & Simulator v3.5</title>
+  <title>Kernel Workstation | Simulador de SO</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,25 +12,23 @@
 <body>
 
   <div class="container">
-    <!-- Header -->
     <header>
       <div class="brand">
         <div class="brand-icon"></div>
         <div class="brand-text">
           <h1>Kernel Workstation</h1>
-          <span class="version-tag">v3.5 Enterprise</span>
+          <span class="version-tag">v3.5</span>
         </div>
       </div>
       <div class="header-status">
         <div class="status-badge">
           <div class="pulse-dot"></div>
-          KERNEL ONLINE
+          SISTEMA ONLINE
         </div>
         <div class="clock" id="systemClock">00:00:00</div>
       </div>
     </header>
 
-    <!-- Bar Controls -->
     <section class="controls-bar">
       <div class="control-group">
         <label for="algorithmSelect">Escalonador CPU:</label>
@@ -42,7 +40,7 @@
       </div>
 
       <div class="control-group">
-        <label for="speedSelect">Velocidade Clock:</label>
+        <label for="speedSelect">Velocidade do Clock:</label>
         <select id="speedSelect">
           <option value="1">1x (Normal)</option>
           <option value="2">2x (Rápido)</option>
@@ -59,7 +57,6 @@
       </div>
     </section>
 
-    <!-- System Dashboard Metrics -->
     <section class="metrics-grid">
       <div class="metric-card">
         <div class="metric-header">
@@ -72,7 +69,7 @@
 
       <div class="metric-card">
         <div class="metric-header">
-          <span class="metric-title">Páginas RAM (Alocação)</span>
+          <span class="metric-title">Uso da RAM</span>
           <span class="metric-icon">🧠</span>
         </div>
         <div class="metric-value" id="ramVal">0 / 16 Blk</div>
@@ -95,13 +92,11 @@
       </div>
     </section>
 
-    <!-- Main Workspace Split -->
     <div class="main-grid">
       <div class="left-column">
-        <!-- Process Table -->
         <div class="panel">
           <div class="panel-header">
-            <span class="panel-title">Tabela de Control de Processos (PCB)</span>
+            <span class="panel-title">Tabela de Controle de Processos (PCB)</span>
           </div>
           <div class="table-container">
             <table>
@@ -116,45 +111,38 @@
                   <th>Ações</th>
                 </tr>
               </thead>
-              <tbody id="procTableBody">
-                <!-- Linhas inseridas via JS -->
-              </tbody>
+              <tbody id="procTableBody"></tbody>
             </table>
           </div>
         </div>
 
-        <!-- Physical RAM Grid -->
         <div class="panel">
           <div class="panel-header">
-            <span class="panel-title">Mapa Físico de Memória RAM (Paging System)</span>
-            <span class="panel-subtitle">16 Páginas de 4KB</span>
+            <span class="panel-title">Mapa de Memória RAM (Sistema de Paginação)</span>
+            <span class="panel-subtitle">16 páginas de 4 KB</span>
           </div>
-          <div class="memory-grid" id="memoryMap">
-            <!-- 16 blocos via JS -->
-          </div>
+          <div class="memory-grid" id="memoryMap"></div>
         </div>
       </div>
 
-      <!-- Right Column: Terminal Console -->
       <div class="right-column">
         <div class="panel terminal-panel">
           <div class="panel-header">
-            <span class="panel-title">Kernel System Log</span>
+            <span class="panel-title">Registro do Sistema</span>
             <span class="terminal-dot"></span>
           </div>
           <div class="terminal" id="terminalLog">
-            <div class="term-line"><span class="term-time">[00:00:00]</span> Kernel 3.5-Enterprise inicializado com sucesso.</div>
-            <div class="term-line"><span class="term-time">[00:00:00]</span> Gerenciador de Paginação RAM pronto (16 blocos).</div>
-            <div class="term-line"><span class="term-time">[00:00:00]</span> Aguardando novas tarefas na Fila de Pronto...</div>
+            <div class="term-line"><span class="term-time">[00:00:00]</span> Kernel 3.5 inicializado com sucesso.</div>
+            <div class="term-line"><span class="term-time">[00:00:00]</span> Gerenciador de paginação da RAM pronto (16 blocos).</div>
+            <div class="term-line"><span class="term-time">[00:00:00]</span> Aguardando novas tarefas na fila de pronto...</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Comparative OS Matrix -->
     <section class="panel">
       <div class="panel-header">
-        <span class="panel-title">Matriz Comparativa de Arquiteturas de SO</span>
+        <span class="panel-title">Comparativo de Arquiteturas de SO</span>
       </div>
       <div class="arch-matrix">
         <div class="arch-card">
@@ -163,10 +151,10 @@
             <h3>Linux Kernel</h3>
           </div>
           <ul>
-            <li><strong>Arquitetura:</strong> Monolítico Modular</li>
+            <li><strong>Arquitetura:</strong> Monolítica modular</li>
             <li><strong>Escalonador:</strong> CFS (Completely Fair Scheduler)</li>
             <li><strong>Memória:</strong> Buddy Allocator + SLAB/SLUB</li>
-            <li><strong>Foco:</strong> Servidores, Cloud, HPC, Android</li>
+            <li><strong>Foco:</strong> Servidores, cloud, HPC e Android</li>
           </ul>
         </div>
 
@@ -176,10 +164,10 @@
             <h3>Windows NT</h3>
           </div>
           <ul>
-            <li><strong>Arquitetura:</strong> Híbrido</li>
-            <li><strong>Escalonador:</strong> Preemptivo por Prioridade (32 níveis)</li>
-            <li><strong>Memória:</strong> VMM com Paging File</li>
-            <li><strong>Foco:</strong> Desktops, Jogos, Redes Corporativas</li>
+            <li><strong>Arquitetura:</strong> Híbrida</li>
+            <li><strong>Escalonador:</strong> Preemptivo por prioridade</li>
+            <li><strong>Memória:</strong> VMM com paging file</li>
+            <li><strong>Foco:</strong> Desktops, jogos e redes corporativas</li>
           </ul>
         </div>
 
@@ -189,10 +177,10 @@
             <h3>macOS (XNU)</h3>
           </div>
           <ul>
-            <li><strong>Arquitetura:</strong> Híbrido (Mach + BSD Kernel)</li>
+            <li><strong>Arquitetura:</strong> Híbrida (Mach + BSD)</li>
             <li><strong>Escalonador:</strong> Mach Multi-layer Feedback Queue</li>
-            <li><strong>Memória:</strong> Mach VM com Compressão de Memória</li>
-            <li><strong>Foco:</strong> Estações de trabalho, Áudio/Vídeo, UI</li>
+            <li><strong>Memória:</strong> Mach VM com compressão</li>
+            <li><strong>Foco:</strong> Estações de trabalho, áudio e vídeo</li>
           </ul>
         </div>
       </div>
