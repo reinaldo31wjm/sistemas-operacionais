@@ -1,184 +1,80 @@
-toma cuidado mano
+# system monitor — documentação de software
 
+O **System Monitor** é um painel web de observabilidade que apresenta, em tempo real, métricas do ambiente onde o serviço está sendo executado. O projeto serve como estudo de caso da Aula 08 sobre documentação de software.
 
+## acesso público
 
-# 🖥️ Introdução aos Sistemas Operacionais
+[abrir o system-monitor](https://system-monitor-i16u.onrender.com)
 
-> Material de apoio para disciplinas introdutórias de Computação, Engenharia de Software, Sistemas de Informação e cursos técnicos.
+## visão rápida
 
----
+A aplicação coleta CPU, memória, disco, carga do sistema, uptime e dados do processo Node.js. O servidor disponibiliza as informações em JSON e o navegador exibe os indicadores em um painel responsivo.
 
-## 📌 Visão Geral
+Principais características:
 
-Este material apresenta os **fundamentos dos Sistemas Operacionais (SO)**: conceitos essenciais, evolução histórica, principais funções, tipos de sistemas e exemplos utilizados no mercado.
+- execução com Node.js e APIs nativas;
+- interface sem framework frontend;
+- atualização automática e diagnóstico no navegador;
+- API `GET /api/stats`;
+- health check `GET /healthz`;
+- deploy configurado para o Render;
+- identidade visual cyberpunk com suporte a `prefers-reduced-motion`.
 
-O objetivo é construir uma **base conceitual sólida**, preparando o estudante para temas mais avançados como processos, escalonamento, memória, sistemas de arquivos e concorrência.
+Em hospedagens, as métricas representam o contêiner ou ambiente de execução do serviço, não o computador do visitante.
 
-## 🎯 Objetivos de Aprendizagem
+## executar localmente
 
-Ao final do estudo, o aluno será capaz de:
+Requisitos: Git e Node.js 18.15 ou superior.
 
-1. Definir formalmente um sistema operacional
-2. Explicar sua importância no funcionamento de um computador
-3. Identificar suas principais funções
-4. Diferenciar tipos de sistemas operacionais
-5. Reconhecer o que **não** é responsabilidade de um SO
-
----
-
-## 1️⃣ O que é um Sistema Operacional
-
-### 1.1 Definição formal
-
-Um **Sistema Operacional** é o software fundamental que **gerencia os recursos de hardware** e **fornece serviços para programas e usuários**, garantindo funcionamento eficiente, seguro e organizado do sistema.
-
-### 1.2 O SO como intermediário
-
-O SO atua como uma **camada intermediária** entre:
-
-- 👤 Usuário / Aplicações
-- ⚙️ Hardware (CPU, memória, disco, dispositivos de entrada e saída)
-
-Essa camada evita que programas acessem diretamente o hardware, reduzindo erros, conflitos e riscos.
-
-### 1.3 Usuário x Hardware
-
-Sem um sistema operacional, o usuário precisaria:
-
-- Programar diretamente em linguagem de máquina
-- Controlar manualmente dispositivos e memória
-
-O SO abstrai essa complexidade, tornando o uso do computador viável e acessível.
-
----
-
-## 2️⃣ Evolução dos Computadores
-
-### 2.1 Antes dos sistemas operacionais
-
-- Um único programa era executado por vez
-- Programação feita diretamente em baixo nível
-- Ausência de gerenciamento automático de recursos
-- Alto risco de erros e desperdício de tempo
-
-### 2.2 Surgimento dos sistemas operacionais
-
-- Necessidade de automatizar tarefas repetitivas
-- Introdução do processamento em lote (*batch*)
-- Evolução para multiprogramação e sistemas interativos
-- Base para os sistemas operacionais modernos
-
----
-
-## 3️⃣ Principais Funções do Sistema Operacional
-
-| Função | O que envolve |
-|---|---|
-| 🧠 **Gerenciamento de CPU** | Criação, execução e finalização de processos; escalonamento; compartilhamento do processador |
-| 💾 **Gerenciamento de Memória** | Alocação e liberação de memória; proteção entre processos; memória virtual |
-| 🔌 **Gerenciamento de Dispositivos** | Controle de periféricos; uso de drivers; comunicação hardware–software |
-| 📁 **Gerenciamento de Arquivos** | Criação, leitura, escrita e exclusão de arquivos; organização em diretórios; permissões |
-| 🖱️ **Interface com o Usuário** | Meio de interação com o sistema (gráfica ou textual) |
-
----
-
-## 4️⃣ Tipos de Interface com o Usuário
-
-| Tipo | Características |
-|---|---|
-| **GUI** (Interface Gráfica) | Janelas, ícones, menus, mouse |
-| **CLI** (Linha de Comando) | Interação por comandos textuais |
-
-Muitos sistemas modernos oferecem suporte a ambos os tipos.
-
----
-
-## 5️⃣ Tipos de Sistemas Operacionais
-
-| Tipo | Características |
-|---|---|
-| 🖥️ **Desktop** | Foco em usabilidade e interação gráfica, uso pessoal ou corporativo |
-| 🗄️ **Servidor** | Alta disponibilidade e desempenho, gerenciamento de rede/usuários/serviços, geralmente sem interface gráfica |
-| 📱 **Dispositivos Móveis** | Otimizados para toque, sensores e bateria, forte integração com hardware específico |
-| ⚙️ **Embarcados** | Presentes em equipamentos dedicados, recursos limitados, execução específica (carros, eletrodomésticos, equipamentos industriais) |
-
----
-
-## 6️⃣ Exemplos de Sistemas Operacionais
-
-| Sistema | Uso principal |
-|---|---|
-| **Windows** | Amplamente utilizado em desktops pessoais e corporativos |
-| **Linux** | Código aberto, muito utilizado em servidores e sistemas críticos |
-| **macOS** | Sistema da Apple para computadores pessoais |
-| **Android / iOS** | Sistemas operacionais para dispositivos móveis |
-
----
-
-## 7️⃣ Comparação Básica entre Sistemas Operacionais
-
-| Categoria | Interface Gráfica | Multitarefa | Recursos | Público-alvo |
-|---|---|---|---|---|
-| Desktop | Alta | Sim | Médios | Usuário final |
-| Servidor | Baixa | Sim | Altos | Serviços |
-| Móvel | Alta | Sim | Otimizados | Usuário final |
-| Embarcado | Rara | Limitada | Muito limitados | Sistema dedicado |
-
----
-
-## 8️⃣ O que o Sistema Operacional NÃO Faz
-
-- ❌ Não desenvolve aplicações
-- ❌ Não substitui o hardware
-- ❌ Não toma decisões de negócio
-- ❌ Não executa tarefas sem solicitação
-- ❌ Não corrige erros lógicos dos programas
-
-> 💡 O sistema operacional **gerencia recursos**, mas não define o objetivo final do uso do computador.
-
----
-
-## 🗺️ Mapa Mental
-
+```bash
+git clone https://github.com/reinaldo31wjm/system-monitor.git
+cd system-monitor
+npm start
 ```
-Sistema Operacional
-├── Conceito
-│   ├── Definição formal
-│   ├── Intermediário usuário–hardware
-│   └── Abstração da complexidade
-├── Evolução
-│   ├── Antes do SO (um programa por vez)
-│   └── Surgimento (batch → multiprogramação)
-├── Funções principais
-│   ├── CPU
-│   ├── Memória
-│   ├── Dispositivos
-│   ├── Arquivos
-│   └── Interface com usuário
-├── Interfaces
-│   ├── GUI
-│   └── CLI
-├── Tipos de SO
-│   ├── Desktop
-│   ├── Servidor
-│   ├── Móvel
-│   └── Embarcado
-├── Exemplos
-│   ├── Windows
-│   ├── Linux
-│   ├── macOS
-│   └── Android / iOS
-└── O que NÃO faz
-    ├── Não desenvolve aplicações
-    ├── Não substitui hardware
-    └── Não corrige erros lógicos
+
+Acesse <http://localhost:3000>. Para usar outra porta:
+
+```bash
+PORT=8080 npm start
 ```
-## ✅ Considerações Finais
 
-O Sistema Operacional é o **elemento central** de qualquer sistema computacional moderno. Compreender seus conceitos iniciais é essencial para entender:
+O projeto não possui dependências externas de runtime, portanto não é necessário executar `npm install`. Para desenvolvimento, use `npm run dev`.
 
-- Como programas são executados
-- Como recursos são compartilhados
-- Como sistemas se mantêm estáveis e seguros
+## configuração essencial
 
-Este conteúdo serve como fundamento teórico para estudos posteriores sobre **processos, threads, escalonamento, sincronização, memória virtual e sistemas de arquivos**.
+| variável | padrão | finalidade |
+| --- | --- | --- |
+| `PORT` | `3000` | Porta HTTP do serviço; no Render, é fornecida pela plataforma. |
+| `SHOW_HOST_DETAILS` | `false` | Habilita detalhes adicionais do host; use com cautela em ambientes públicos. |
+
+Não publique senhas, tokens, chaves ou arquivos `.env` com valores reais.
+
+## verificar o serviço
+
+```bash
+curl -fsS http://localhost:3000/healthz
+curl -fsS http://localhost:3000/api/stats
+curl -fsSI http://localhost:3000/
+```
+
+O endpoint `/healthz` retorna `{"status":"ok"}` quando o processo está ativo. A descrição completa das rotas e campos está em [docs/documentacao-api.md](docs/documentacao-api.md).
+
+## documentação do projeto
+
+Cada documento tem uma responsabilidade específica:
+
+- [documentacao-de-projeto.md](docs/documentacao-de-projeto.md): contexto, escopo, requisitos e cenários de uso;
+- [documentacao-api.md](docs/documentacao-api.md): contrato HTTP, campos, exemplos e limitações;
+- [arquitetura.md](docs/wiki/arquitetura.md): módulos, fluxo de dados e decisões técnicas;
+- [processo-devops.md](docs/processo-devops.md): desenvolvimento, validação, revisão e deploy;
+- [checklist-documentacao.md](docs/checklist-documentacao.md): revisão antes de integrar ou publicar;
+- [materiais da aula](docs/aulas/): PDF e resumo da Aula 08.
+
+## colaboração e segurança
+
+- [como contribuir](contributing.md)
+- [código de conduta](code-of-conduct.md)
+- [política de segurança](security.md)
+- [licença](license)
+
+A documentação deve ser atualizada junto com mudanças em rotas, métricas, variáveis, requisitos ou procedimentos de operação.
