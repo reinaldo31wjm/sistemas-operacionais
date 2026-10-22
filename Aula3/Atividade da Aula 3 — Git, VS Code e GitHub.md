@@ -125,9 +125,9 @@ Para o projeto desta pasta, uma entrega adequada pode conter os três arquivos d
 
 
 ## Referências
+1. [1] [Pasta Aula3 no repositório sistemas-operacionais-1](https://github.com/reinaldo31wjm/sistemas-operacionais-1/tree/main/Aula3 )
 
-[1]: https://github.com/reinaldo31wjm/sistemas-operacionais-1/tree/main/Aula3 "Pasta Aula3 no repositório sistemas-operacionais-1"
+5. [5] [Source Control no Visual Studio Code](https://code.visualstudio.com/docs/sourcecontrol/overview )
 
-[5]: https://code.visualstudio.com/docs/sourcecontrol/overview "Source Control no Visual Studio Code"
+6. [6] [Documentação do GitHub sobre criação e publicação de projeto](https://docs.github.com/en/get-started/start-your-journey/uploading-a-project-to-github )
 
-[6]: https://docs.github.com/en/get-started/start-your-journey/uploading-a-project-to-github "Documentação do GitHub sobre criação e publicação de projeto"
