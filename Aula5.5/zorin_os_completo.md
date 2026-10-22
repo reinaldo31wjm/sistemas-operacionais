@@ -27,7 +27,7 @@ Este relatório foi reescrito a partir da comparação entre `zorin_os.md`, `pas
 
 ### 1.1 Captura da área de trabalho
 
-![Área de trabalho do Zorin OS](https://private-us-east-1.manuscdn.com/sessionFile/GKAjooEhypwTQTRGEVRuhn/sandbox/2XEMLyCwDlIBok7aIwgzJN-images_1789399535633_na1fn_L2hvbWUvdWJ1bnR1L3VwbG9hZC96b3Jpbi1vcy1jb21wbGV0bw.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvR0tBam9vRWh5cHdUUVRSR0VWUnVobi9zYW5kYm94LzJYRU1MeUN3RGxJQm9rN2FJd2d6Sk4taW1hZ2VzXzE3ODkzOTk1MzU2MzNfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwzVndiRzloWkM5NmIzSnBiaTF2Y3kxamIyMXdiR1YwYncucG5nIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzkwODEyODAwfX19XX0_&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEUCIQCyo1I3ogwbmRir-bAmuwjmhGOTxgL0sd2mqS-o2Ro6dQIgFMjcecxB9ZJKAtqMPlY8BVx-BeWb0i20XbJALDCqaF4_)
+![Área de trabalho do Zorin OS](imagens/zorin-os-completo.png)
 
 *Figura 1 — Área de trabalho do Zorin OS em execução, mostrando o papel de parede, o painel inferior, o menu de aplicativos e os indicadores do sistema.*
 
@@ -45,7 +45,7 @@ O projeto não promete compatibilidade universal com programas Windows. Em vez d
 
 O projeto foi iniciado pelos irmãos Artyom e Kyrill Zorin em 2008. A primeira versão pública, Zorin OS 1.0, foi lançada em 2009. A evolução do sistema mostra uma orientação constante para facilitar o uso do desktop sem abandonar a flexibilidade do ecossistema Linux.
 
-![Linha do tempo da evolução do Zorin OS](https://private-us-east-1.manuscdn.com/sessionFile/GKAjooEhypwTQTRGEVRuhn/sandbox/2XEMLyCwDlIBok7aIwgzJN-images_1789399535633_na1fn_L2hvbWUvdWJ1bnR1L3VwbG9hZC96b3Jpbl90aW1lbGluZQ.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvR0tBam9vRWh5cHdUUVRSR0VWUnVobi9zYW5kYm94LzJYRU1MeUN3RGxJQm9rN2FJd2d6Sk4taW1hZ2VzXzE3ODkzOTk1MzU2MzNfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwzVndiRzloWkM5NmIzSnBibDkwYVcxbGJHbHVaUS5wbmciLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTA4MTI4MDB9fX1dfQ__&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEYCIQDUPrKUDKC9tvg7p0C0JjuEdlkEV7h1qKl-IxiKcXvYiwIhALzsMzwlqNAXzQXeGhUVcNqt4~TbmAC6pzjnnqeLESdF)
+![Linha do tempo da evolução do Zorin OS](imagens/zorin_timeline.png)
 
 *Figura 2 — Linha do tempo resumida, construída a partir das versões e datas informadas nas páginas técnicas e no blog oficial do Zorin OS. [1] [3]*
 
@@ -111,7 +111,7 @@ Computadores Mac com processador Apple Silicon não executam o Zorin OS nativame
 
 Uma máquina virtual é um computador simulado por software. O sistema principal é chamado de **host**; o software que fornece os dispositivos virtuais é o **virtualizador**; e o sistema instalado dentro da máquina é o **guest**.
 
-![Arquitetura de virtualização do Zorin OS](https://private-us-east-1.manuscdn.com/sessionFile/GKAjooEhypwTQTRGEVRuhn/sandbox/2XEMLyCwDlIBok7aIwgzJN-images_1789399535633_na1fn_L2hvbWUvdWJ1bnR1L3VwbG9hZC96b3Jpbl92aXJ0dWFsaXphY2Fv.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvR0tBam9vRWh5cHdUUVRSR0VWUnVobi9zYW5kYm94LzJYRU1MeUN3RGxJQm9rN2FJd2d6Sk4taW1hZ2VzXzE3ODkzOTk1MzU2MzNfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwzVndiRzloWkM5NmIzSnBibDkyYVhKMGRXRnNhWHBoWTJGdi5wbmciLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTA4MTI4MDB9fX1dfQ__&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEUCIQCTsUFNPIwsQICwq~7WheC3VbuHGo3H6oC3Q-Nsk6OPZgIgDMqw1bFtoEB7MD0OTtvQU2Lp1qyg7vMbIZN3VxmMCWQ_)
+![Arquitetura de virtualização do Zorin OS](imagens/zorin_virtualizacao.png)
 
 *Figura 3 — Fluxo conceitual de uma instalação do Zorin OS 18.1 em máquina virtual, desde o sistema host até o guest e seus snapshots.*
 
@@ -179,11 +179,11 @@ A comparação mostra que “melhor distribuição” é uma conclusão dependen
 
 ### 10.1 Evidência visual da máquina virtual
 
-![Configuração da máquina virtual Zorin OS](https://private-us-east-1.manuscdn.com/sessionFile/GKAjooEhypwTQTRGEVRuhn/sandbox/2XEMLyCwDlIBok7aIwgzJN-images_1789399535633_na1fn_L2hvbWUvdWJ1bnR1L3VwbG9hZC92aXJ0dWFsYm94LXpvcmluLWNvbXBsZXRv.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvR0tBam9vRWh5cHdUUVRSR0VWUnVobi9zYW5kYm94LzJYRU1MeUN3RGxJQm9rN2FJd2d6Sk4taW1hZ2VzXzE3ODkzOTk1MzU2MzNfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwzVndiRzloWkM5MmFYSjBkV0ZzWW05NExYcHZjbWx1TFdOdmJYQnNaWFJ2LnBuZyIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5MDgxMjgwMH19fV19&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEUCIAG7oCDJCrGWKaZdktANbTxjGtBzr1qKQWMVZ-u5JQqLAiEA5rEcy7VUktCsPI~iZ6~lYElKGu4o9axt4-0VmHbN5Pk_)
+![Configuração da máquina virtual Zorin OS](imagens/virtualbox-zorin-completo.png)
 
 *Figura 4 — Painel de detalhes do Oracle VirtualBox com a máquina Zorin em execução. A captura enfatiza os parâmetros de hardware do laboratório: 2.048 MB (2 GB) de RAM, controladora VMSVGA, disco virtual de 25 GB, rede NAT, paginação aninhada e paravirtualização KVM. A configuração registrada é o mínimo funcional utilizado para demonstrar a viabilidade do guest em hardware limitado; para uso fluido, recomenda-se 4 GB de RAM e 2 vCPUs.*
 
-![Oracle VirtualBox executando o Zorin OS](https://private-us-east-1.manuscdn.com/sessionFile/GKAjooEhypwTQTRGEVRuhn/sandbox/2XEMLyCwDlIBok7aIwgzJN-images_1789399535633_na1fn_L2hvbWUvdWJ1bnR1L3VwbG9hZC92aXJ0dWFsYm94LWdlcmVuY2lhZG9yLWNvbXBsZXRv.PNG?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvR0tBam9vRWh5cHdUUVRSR0VWUnVobi9zYW5kYm94LzJYRU1MeUN3RGxJQm9rN2FJd2d6Sk4taW1hZ2VzXzE3ODkzOTk1MzU2MzNfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwzVndiRzloWkM5MmFYSjBkV0ZzWW05NExXZGxjbVZ1WTJsaFpHOXlMV052YlhCc1pYUnYuUE5HIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzkwODEyODAwfX19XX0_&Key-Pair-Id=K2QY5QTL8JSY6C&Signature=MEYCIQDLdlYX4XGxTZgDbXd2IOhX7gCZI3GDxw0n78YFpm-YhwIhANIEF4Vki2HQsbCiYmnvT8Q~-Qmey1~4Ox6is1bznkrh)
+![Oracle VirtualBox executando o Zorin OS](imagens/virtualbox-gerenciador-completo.PNG)
 
 *Figura 5 — Janela do Oracle VirtualBox Gerenciador com a execução do guest Zorin em destaque. Diferentemente da Figura 4, esta imagem enfatiza a operação do ambiente virtual e a integração visual entre o gerenciador e a janela do sistema convidado, mantendo a configuração de laboratório de 2.048 MB (2 GB) de RAM.*
 
@@ -199,17 +199,17 @@ A principal conclusão da comparação é que o Zorin OS não precisa ser aprese
 
 ## 12. Referências
 
-1. [1] [Technical details about Zorin OS](https://zorin.com/os/details/)
-2. [2] [Zorin OS 18 Has Arrived](https://blog.zorin.com/2025/10/14/zorin-os-18-has-arrived/)
-3. [3] [Zorin OS 18.1 Is Released](https://blog.zorin.com/2026/04/15/zorin-os-18.1-is-released/)
-4. [4] [Download Zorin OS](https://zorin.com/os/download/)
-5. [5] [System Requirements](https://help.zorin.com/docs/getting-started/system-requirements/)
-6. [6] [Check the Integrity of Your Copy of Zorin OS](https://help.zorin.com/docs/getting-started/check-the-integrity-of-your-copy-of-zorin-os/)
-7. [7] [What is Kali Linux?](https://www.kali.org/docs/introduction/what-is-kali-linux/)
-8. [8] [Lubuntu — The official Lubuntu home](https://lubuntu.me/)
-9. [9] [Ubuntu flavors](https://ubuntu.com/desktop/flavors)
-10. [10] [Fedora Workstation](https://fedoraproject.org/workstation/)
-11. [11] [Download Linux Mint](https://linuxmint.com/download.php)
-12. [12] [Oracle VM VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads)
-13. [13] [Expanded Security Maintenance for Ubuntu and open source](https://ubuntu.com/security/esm)
-14. [14] [Ubuntu release cycle](https://ubuntu.com/about/release-cycle)
+[1]: https://zorin.com/os/details/ "Technical details about Zorin OS"
+[2]: https://blog.zorin.com/2025/10/14/zorin-os-18-has-arrived/ "Zorin OS 18 Has Arrived"
+[3]: https://blog.zorin.com/2026/04/15/zorin-os-18.1-is-released/ "Zorin OS 18.1 Is Released"
+[4]: https://zorin.com/os/download/ "Download Zorin OS"
+[5]: https://help.zorin.com/docs/getting-started/system-requirements/ "System Requirements"
+[6]: https://help.zorin.com/docs/getting-started/check-the-integrity-of-your-copy-of-zorin-os/ "Check the Integrity of Your Copy of Zorin OS"
+[7]: https://www.kali.org/docs/introduction/what-is-kali-linux/ "What is Kali Linux?"
+[8]: https://lubuntu.me/ "Lubuntu — The official Lubuntu home"
+[9]: https://ubuntu.com/desktop/flavors "Ubuntu flavors"
+[10]: https://fedoraproject.org/workstation/ "Fedora Workstation"
+[11]: https://linuxmint.com/download.php "Download Linux Mint"
+[12]: https://www.virtualbox.org/wiki/Downloads "Oracle VM VirtualBox Downloads"
+[13]: https://ubuntu.com/security/esm "Expanded Security Maintenance for Ubuntu and open source"
+[14]: https://ubuntu.com/about/release-cycle "Ubuntu release cycle"
