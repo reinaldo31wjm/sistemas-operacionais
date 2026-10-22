@@ -62,12 +62,8 @@ Assim, o código da pasta não é apenas um arquivo simples enviado ao GitHub. E
 
 ## Referências
 
-[1]: https://github.com/reinaldo31wjm/sistemas-operacionais-1/tree/main/Aula3 "Pasta Aula3 no repositório sistemas-operacionais-1"
-
-[2]: https://raw.githubusercontent.com/reinaldo31wjm/sistemas-operacionais-1/main/Aula3/index.html "Arquivo index.html da Aula 3"
-
-[3]: https://raw.githubusercontent.com/reinaldo31wjm/sistemas-operacionais-1/main/Aula3/script.js "Arquivo script.js da Aula 3"
-
-[4]: https://raw.githubusercontent.com/reinaldo31wjm/sistemas-operacionais-1/main/Aula3/style.css "Arquivo style.css da Aula 3"
-
-[5]: https://code.visualstudio.com/docs/sourcecontrol/overview "Source Control no Visual Studio Code"
+1. [Pasta Aula3 no repositório sistemas-operacionais-1](https://github.com/reinaldo31wjm/sistemas-operacionais-1/tree/main/Aula3 )
+2. [Arquivo index.html da Aula 3](https://raw.githubusercontent.com/reinaldo31wjm/sistemas-operacionais-1/main/Aula3/index.html )
+3. [Arquivo script.js da Aula 3](https://raw.githubusercontent.com/reinaldo31wjm/sistemas-operacionais-1/main/Aula3/script.js )
+4. [Arquivo style.css da Aula 3](https://raw.githubusercontent.com/reinaldo31wjm/sistemas-operacionais-1/main/Aula3/style.css )
+5. [Source Control no Visual Studio Code](https://code.visualstudio.com/docs/sourcecontrol/overview )
