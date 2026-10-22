@@ -199,17 +199,13 @@ A principal conclusão da comparação é que o Zorin OS não precisa ser aprese
 
 ## 12. Referências
 
-[1]: https://zorin.com/os/details/ "Technical details about Zorin OS"
-[2]: https://blog.zorin.com/2025/10/14/zorin-os-18-has-arrived/ "Zorin OS 18 Has Arrived"
-[3]: https://blog.zorin.com/2026/04/15/zorin-os-18.1-is-released/ "Zorin OS 18.1 Is Released"
-[4]: https://zorin.com/os/download/ "Download Zorin OS"
-[5]: https://help.zorin.com/docs/getting-started/system-requirements/ "System Requirements"
-[6]: https://help.zorin.com/docs/getting-started/check-the-integrity-of-your-copy-of-zorin-os/ "Check the Integrity of Your Copy of Zorin OS"
-[7]: https://www.kali.org/docs/introduction/what-is-kali-linux/ "What is Kali Linux?"
-[8]: https://lubuntu.me/ "Lubuntu — The official Lubuntu home"
-[9]: https://ubuntu.com/desktop/flavors "Ubuntu flavors"
-[10]: https://fedoraproject.org/workstation/ "Fedora Workstation"
-[11]: https://linuxmint.com/download.php "Download Linux Mint"
-[12]: https://www.virtualbox.org/wiki/Downloads "Oracle VM VirtualBox Downloads"
-[13]: https://ubuntu.com/security/esm "Expanded Security Maintenance for Ubuntu and open source"
-[14]: https://ubuntu.com/about/release-cycle "Ubuntu release cycle"
+1. [1] [Technical details about Zorin OS](https://zorin.com/os/details/)
+2. [2] [Zorin OS 18 Has Arrived](https://blog.zorin.com/2025/10/14/zorin-os-18-has-arrived/)
+3. [3] [Zorin OS 18.1 Is Released](https://blog.zorin.com/2026/04/15/zorin-os-18.1-is-released/)
+4. [4] [Download Zorin OS](https://zorin.com/os/download/)
+5. [5] [System Requirements](https://help.zorin.com/docs/getting-started/system-requirements/)
+6. [6] [Check the Integrity of Your Copy of Zorin OS](https://help.zorin.com/docs/getting-started/check-the-integrity-of-your-copy-of-zorin-os/)
+7. [7] [Ubuntu flavors](https://ubuntu.com/desktop/flavors)
+8. [8] [Fedora Workstation](https://fedoraproject.org/workstation/)
+9. [9] [Download Linux Mint](https://linuxmint.com/download.php)
+10. [10] [Oracle VM VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads)
